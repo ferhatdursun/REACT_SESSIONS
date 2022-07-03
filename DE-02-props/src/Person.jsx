@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Msg from './Msg';
 
 const Person = (props) => {

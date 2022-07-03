@@ -15,6 +15,7 @@ const App = () => {
         img="https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445__340.jpg"
         tel="555 33 55"
       />
+    
     </div>
   );
 }

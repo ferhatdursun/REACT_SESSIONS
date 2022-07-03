@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const Msg = (i) => {
   // console.log(props);
