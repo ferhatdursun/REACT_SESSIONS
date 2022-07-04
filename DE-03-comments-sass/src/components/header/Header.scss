@@ -1,12 +1,14 @@
 @import "../../scss/variable";
 
 header{
-    background-color: $lightGreen;
-    padding: 3rem;
-}
+
+ background-color:$lightGreen;
+ padding:3rem;
 
 h1{
+ text-align: center;
+ color:black;
 
-    text-align: center;
-    color: black;
+}
+
 }
