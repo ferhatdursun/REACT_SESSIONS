@@ -1,20 +1,21 @@
+import React from 'react'
 
-import Msg from './Msg';
+const Person = (i) => {
 
-const Person = (props) => {
- console.log(props);
-const{name, img, tel}=props;
+
+const {name,img,tel}= i;
 
   return (
     <div>
-    <h2>{name}</h2>
-   <Msg nameMsg={name}
-    telMsg={tel}
-   />
+      <h2>{name}</h2>
+      <h2>{tel}</h2>
+    <Msg 
+        nameMsg={name}
+        telMsg={tel}
 
+    />
 
-     <img src={img} alt="" />
-     <p>{tel}</p>
+      <img src={img} alt="" />
     </div>
   )
 }
