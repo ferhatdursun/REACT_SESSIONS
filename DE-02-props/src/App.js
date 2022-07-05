@@ -1,22 +1,22 @@
-import React from 'react'
-import Person from './Person'
+import React from "react";
+import Person from "./Person";
 
 const App = () => {
   return (
     <div>
-      <Person name="Ayse Yilmaz"
-              tel="555 55 55"
-              img="https://cdn.pixabay.com/photo/2022/06/05/12/40/hijab-7243963__340.jpg"
+      <Person
+        name="Ayse Yılmaz"
+        img="https://cdn.pixabay.com/photo/2017/08/30/12/45/girl-2696947__480.jpg"
+        tel="555 55 55"
       />
 
-      <Person name="Ferhat"
-              tel="555 55 55"
-              img="https://cdn.pixabay.com/photo/2022/06/07/16/23/lion-7248726__340.jpg"
+      <Person
+        name="Osman Kara"
+        img="https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445__340.jpg"
+        tel="555 33 55"
       />
-
-
     </div>
   );
-}
+};
 
-export default App
+export default App;

@@ -1,25 +1,11 @@
-
-
-const Msg = (i) => {
-  // console.log(props);
-  const {nameMsg,telMsg}=i;
-  // props=nameMsg="Osman"
-  return (
-    <div>
-      <h1> {nameMsg}</h1>
-      <p>{telMsg}</p>
-    </div>
-  );
+const Msg = (props) => {
+  // props=>{nameMsg="Emily Kurnikov"}
+  console.log(props);
+  return <h1>Hello, I am {props.nameMsg}</h1>;
 };
 
-// const Msg = ({nameMsg,telMsg}) => {
-
-//   return (
-//     <div>
-//       <h1> {nameMsg}</h1>
-//       <p>{telMsg}</p>
-//     </div>
-//   );
+// const Msg = ({ nameMsg }) => {
+//   console.log(nameMsg);
+//   return <h1>Hello, I am {nameMsg}</h1>;
 // };
-
-export default Msg
+export default Msg;

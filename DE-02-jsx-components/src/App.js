@@ -6,9 +6,8 @@ const App = () => {
   return (
     <div>
       App
-      ferhat
       <Msg />
-      
+      <Msg />
       <Footer />
     </div>
   );

@@ -15,7 +15,7 @@ console.log(dataa);
  dataa.map((item)=>{
 
 return(
-<div className="card">
+<div className="card" key={item.id}>
 <h1>{item.name}</h1>
 <h2>{item.job}</h2>
 

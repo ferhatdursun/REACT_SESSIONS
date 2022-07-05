@@ -1,8 +1,10 @@
-
 import "./Footer.css"
+
 function Footer() {
   return (
-    <div className="footer">Burasi Footer</div>
+    <div className="footer">
+    Burası Footer
+    </div>
   )
 }
 
