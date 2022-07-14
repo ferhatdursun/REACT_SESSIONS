@@ -1,6 +1,6 @@
-import React from 'react'
-import Footer from './footer/Footer'
-import Msg from './msg/Msg'
+import React from "react";
+import Footer from "./footer/Footer";
+import Msg from "./msg/Msg";
 
 const App = () => {
   return (
@@ -11,6 +11,6 @@ const App = () => {
       <Footer />
     </div>
   );
-}
+};
 
-export default App
+export default App;

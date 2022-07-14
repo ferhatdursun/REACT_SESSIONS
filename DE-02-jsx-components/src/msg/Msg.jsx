@@ -1,39 +1,40 @@
-//? React, JSX kullanır.
-//?  JSX'te, HTML öğelerini doğrudan JS'de kullanabiliriz
+//? React, JSX kullanir.
+//? JSX'te, HTML ögelerini dogrudan JS'de kullanabiliriz
 
-//! Components birleştirilmiş bir HTML,CSS,JS kodu döndürebilir..
-//!Ancak, tek bir kapsayıcı (div, section, article, <> etc. gibi) öğesi döndürmesi gerekir.
-//* JSX'te Styling çeşitli şekillerde gerçekleştirilebilir.
-//* 1-) Inline-Styling kullanılabilir.
-//* 2-) Styling, local veya global bir değişken olarak tanımlanabilir..
-//* 3-) Styling external stylesheet (harici stil sayfası) olarak tanımlanabilir
+//! Components birlestirilmis bir HTML,CSS,JS kodu döndürülebilir...
+//! Ancak, tek bir kapsayici (div,section, article, <> etc. gibi) ögesi döndürmesi gerekir.
+
+//* JSX'te Styling cesitli sekillerde gerceklestirilebilir.
+//* 1-) Inline-Styling kullanilabilir.
+//* 2-) Styling, local veya global bir degisken olarak tanimlanabilir...
+//* 3-) Styling external stylesheet (harici stil sayfasi) olarak tanimlanabilir.
 
 //! NOTES:
-//*styling için, property-value(object) yapısı kullanılır.
-//* property name için camelCase yazı şekli, class tanımlamaları için className ismi kullanılır
-//*Material UI, Styled Component, Sass, Bootstrap etc. gibi 3. part kütüphaneler de stil için kullanılabilir.
+
+//* styling icin, property-value(object) yapisi kullanilir.
+//* property name icin camelCase yazi sekli, class tanimlamalari icin className ismi kullanilir.
+//* Material UI, Styled Component, Saas, Bootstrap etc. gibi 3. part kütüphaneler de stil icin kullanilabilir.
 
 import React from "react";
 import Clock from "../clock/Clock";
-import img from "../img/indir.jpeg";
+import img from "../img/inder.jpeg";
 
-//!external
+//! external
 import "./Msg.css";
 
 //!internal
 
 const stylesA = {
   color: "green",
-  fontFamily: "Tahoma",
+  fonnFamily: "Tahoma",
   border: "1px solid red",
 };
+
 const Msg = () => {
   return (
     <div>
-      <h2 style={{ color: "red" }}>hoşgeldin react</h2>
-
-      <p style={stylesA}>burası JSX alanı</p>
-
+      <h2 style={{ color: "red" }}>hosgeldin Ramazan</h2>
+      <p style={stylesA}>burasi JSX alani</p>
       <img className="msg-img" src={img} alt="" />
       <img
         className="msg-img"
@@ -46,5 +47,3 @@ const Msg = () => {
     </div>
   );
 };
-
-export default Msg;

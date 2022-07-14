@@ -1,13 +1,11 @@
-import React from 'react'
-
+import React from "react";
 
 const Clock = () => {
   return (
-    <div> 
-    <h2>{new Date().toLocaleString()}</h2>
- 
+    <div>
+      <h2>{new Date().toLocaleString()}</h2>
     </div>
-  )
-}
+  );
+};
 
-export default Clock
+export default Clock;

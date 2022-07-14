@@ -1,6 +1,5 @@
 import "./Header.scss";
 
-
 const Header = () => {
   return (
     <header>

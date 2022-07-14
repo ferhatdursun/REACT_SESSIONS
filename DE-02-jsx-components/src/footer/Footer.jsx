@@ -1,11 +1,11 @@
-import "./Footer.css"
+import "./Footer.css";
 
 function Footer() {
   return (
     <div className="footer">
-    Burası Footer
+      Burasi Footer
     </div>
   )
 }
 
-export default Footer
+export default Footer;
