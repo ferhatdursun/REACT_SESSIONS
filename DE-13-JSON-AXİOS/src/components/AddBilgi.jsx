@@ -1,17 +1,16 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-
-
-
-const AddTutorial = ({addBilgi}) => {
-  const [title, setTitle] = useState('');
-  const [desc, setDesc] = useState('');
-//! post işlemi babadan buraya her özelliği ile geldi, form yapısıyla ekranda verileri girdik, submit butonuna tıklayınca form onSubmit oldu ve onSubmit olunca, buraya babadan gelen post işlemi çalıştı
+const AddTutorial = ({ addBilgi }) => {
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
+  //! post işlemi babadan buraya her özelliği ile geldi, form yapısıyla ekranda verileri girdik, submit butonuna tıklayınca form onSubmit oldu ve onSubmit olunca, buraya babadan gelen post işlemi çalıştı
   const submit = (e) => {
-    e.preventDefault();
-     addBilgi({title:title,description:desc})
-     
+    e.preventDefault(); //! asagidakileri görmeden sayfayi göndermesin diye preventDefault yazdik. Bu gönderme islemini bekletiyor.
+    addBilgi({ title: title, description: desc }); //! Bu satirda yazilan title ve description addBilgi ile home sayfasinda ki addBilgiye gönderiliyor.
   };
+
+  //! addBilgiye browserdan veriler giriliyo(altta ki return icerisinden) ve sonrasinda const submit icerisinde ki addBilgi({}) icerisine
+  //! bu bilgiler gönderiliyor.
 
   return (
     <div className="container text-center mt-4">
@@ -42,10 +41,13 @@ const AddTutorial = ({addBilgi}) => {
             placeholder="Enter your Description"
             value={desc}
             onChange={(e) => setDesc(e.target.value)}
+            //! input da veri girisi oldugunda onChange tetikleniyor ve setDesc(e) nin value degerini alip onu desc'e esitliyor.Bu sekilde girilen veriler desc de tutuluyor.
             required
           />
         </div>
-        <button type="submit" className="btn btn-danger mb-4">Submit</button>
+        <button type="submit" className="btn btn-danger mb-4">
+          Submit
+        </button>
       </form>
     </div>
   );

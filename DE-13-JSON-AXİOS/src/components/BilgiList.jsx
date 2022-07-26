@@ -1,13 +1,13 @@
-import { FaEdit } from 'react-icons/fa';
-import { AiFillDelete } from 'react-icons/ai';
-import EditBilgi from './EditBilgi';
-import { useState } from 'react';
+import { FaEdit } from "react-icons/fa";
+import { AiFillDelete } from "react-icons/ai";
+import EditBilgi from "./EditBilgi";
+import { useState } from "react";
 
-const TutorialList = ({bilgiler,deleteBilgi,degistir}) => {
-const [degistirItem,setDegistirıtem]=useState("")
-//!babadan gelen bütün bilgiler dizisi ekrana bastırıldı
-//!babadan gelen deleteBilgi fonksiyonu, alttaki çöp iconuna basılınca basıldığı yerdeki id si ile çalıştı
-//!babadan gelen degistir fonksiyonu=> burada kalem iconuna basılınca ekrandaki tüm veriler torundaki (modal ın içinde) ekranda çıkmalı, üstelik ben o verileri değiştirebilmeliyim, bu yüzden hem buradaki veriler hem değiştirebilme yeteneği için useState tanımlayıp, (kalem iconuna tıklamamla ) verilerimi ona gömüp, gerekli işlemlerin yapılacağı modal a yani torun a yolladım, orada veriler gözükecek ben değişiklik yapabileceğim, save butonuna basınca değişiklik put ile dataabase e gidecek, bu yüzden  dededen buraya gelen put işlemini (degistir fonksiyonunu) verileri gömdüğüm degistirItem i ve değiştirebilme yeteneğini toruna yolladım 
+const TutorialList = ({ bilgiler, deleteBilgi, degistir }) => {
+  const [degistirItem, setDegistirıtem] = useState("");
+  //!babadan gelen bütün bilgiler dizisi ekrana bastırıldı
+  //!babadan gelen deleteBilgi fonksiyonu, alttaki çöp iconuna basılınca basıldığı yerdeki id si ile çalıştı
+  //!babadan gelen degistir fonksiyonu=> burada kalem iconuna basılınca ekrandaki tüm veriler torundaki (modal ın içinde) ekranda çıkmalı, üstelik ben o verileri değiştirebilmeliyim, bu yüzden hem buradaki veriler hem değiştirebilme yeteneği için useState tanımlayıp, (kalem iconuna tıklamamla ) verilerimi ona gömüp, gerekli işlemlerin yapılacağı modal a yani torun a yolladım, orada veriler gözükecek ben değişiklik yapabileceğim, save butonuna basınca değişiklik put ile dataabase e gidecek, bu yüzden  dededen buraya gelen put işlemini (degistir fonksiyonunu) verileri gömdüğüm degistirItem i ve değiştirebilme yeteneğini toruna yolladım
 
   return (
     <div className="container mt-4">
@@ -24,6 +24,7 @@ const [degistirItem,setDegistirıtem]=useState("")
         </thead>
         <tbody>
           {bilgiler.map((item) => {
+            //! en üstte const TutorialList'in icerisine bilgiler yazdiktan sonra bilgilerin üstünde burada map ile geziyoruz.
             const { id, title, description } = item;
             return (
               <tr key={id}>
@@ -38,6 +39,8 @@ const [degistirItem,setDegistirıtem]=useState("")
                     className="me-2 text-warning cursor-pointer"
                     onClick={() => setDegistirıtem(item)}
                   />
+                  {/* //! FaEdit onClick oldugunda setDegistiritem dan dolayi asagida ki EditBilgi icerisindekilerin hepsi editBilgi sayfasina gönderiliyor. Ve bunlar Editbilgide const EditTutorial icerisinde karsilaniyor. */}
+
                   <AiFillDelete
                     size={22}
                     className="text-danger cursor-pointer"
@@ -50,7 +53,11 @@ const [degistirItem,setDegistirıtem]=useState("")
         </tbody>
       </table>
 
-      <EditBilgi degistir={degistir} degistirItem={degistirItem} setDegistirıtem={setDegistirıtem}/>
+      <EditBilgi
+        degistir={degistir}
+        degistirItem={degistirItem}
+        setDegistirıtem={setDegistirıtem}
+      />
     </div>
   );
 };

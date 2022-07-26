@@ -1,6 +1,3 @@
-
-
-
 const EditTutorial = ({ degistir, degistirItem, setDegistirıtem }) => {
   // console.log(degistirItem);
   const { id, title, description } = degistirItem;
