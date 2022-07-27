@@ -5,17 +5,12 @@ import Navbar from "./components/navbar/Navbar";
 import About from "./pages/about/About";
 import Login from "./pages/login/Login";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+
 const App = () => {
   return (
     <div>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Login" element={<Login />} />
-        </Routes>
-      </BrowserRouter>
+      <Home/>
     </div>
   );
 };
