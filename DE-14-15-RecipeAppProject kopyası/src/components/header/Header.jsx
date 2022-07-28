@@ -1,17 +1,15 @@
 import React from "react";
 import {
-  Button,
-  FoodInput,
   FormContainer,
-  MainHeader,
-  Select,
   HeaderContainer,
+  MainHeader,
+  FoodInput,
+  Button,
+  Select,
 } from "./HeaderStyles";
-import homeFoto from "../../assets/home.svg";
 
-//! Home dan gönderilen setQuery, setOgün, getData  const Header icerisinde karsilaniyor.
-const Header = ({ setOgün, setQuery, getData }) => {
-  const submit = () => {
+const Header = ({ setQuery, setOgun, getData }) => {
+  const submit = (e) => {
     e.preventDefault();
     getData();
   };
@@ -24,22 +22,19 @@ const Header = ({ setOgün, setQuery, getData }) => {
         <FoodInput
           type="text"
           placeholder="Search"
-          onChange={() => setQuery(e.target.value)}
-        ></FoodInput>
+          onChange={(e) => setQuery(e.target.value)}
+        />
+
         <Button type="submit">Search</Button>
         <Select
-          name="ogunTypes"
-          id="ogunTypes"
-          onChange={(e) => setOgün(e.type.value)}
+          name="ögünTypes"
+          id="ögünTypes"
+          onChange={(e) => setOgun(e.target.value)}
         >
-          <option value="breakfest">Breakfest</option>
-          <option value="lunch">Lunch</option>
-          <option value="dinner">Dinner</option>
-          <option value="snack">Snack</option>
-          <option value="teatime">Teatime</option>
+          <option>Breakfast</option>
+          <option>Lunch</option>
         </Select>
       </FormContainer>
-      <img src={homeFoto} alt="" width="50%" className="image" />
     </HeaderContainer>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FormContainer,
   Header,
@@ -9,19 +9,21 @@ import {
   StyledInput,
 } from "./LoginStyles";
 import mealSvg from "../../assets/meal.svg";
+import { useNavigate } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
-const Login = () => {
-  // const navigate = useNavigate();
-  const user = {
-    username: "user",
-  };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    sessionStorage.setItem("user", JSON.stringify(user));
 
-    window.location.href = "/home";
-    // veri göndermeyeceksek bu şekilde sayfaya yönlendirebiliriz. netlify da sorun olabiliyor  navigate dene
-  };
+const Login = () => {
+  const [nickName, setNickname] = useState();
+  const navigate = useNavigate()
+  
+
+  const backendeYolla = (e) => {
+    e.preventDefault()
+    sessionStorage.setItem("kullanici", JSON.stringify(nickName));
+    navigate("/home");
+  }
+
+
 
   return (
     <LoginContainer>
@@ -30,9 +32,9 @@ const Login = () => {
         <Header>{"<Clarusway/>"}Recipe</Header>
         {/* login sayfasındaki yuvarlak olayın içindeki yazı (Header) */}
 
-        <StyledForm onSubmit={handleSubmit}>
+        <StyledForm onSubmit={backendeYolla}>
           {/* 3 kutunun olduğu form  */}
-          <StyledInput type="text" placeholder="username" required />
+          <StyledInput type="text" placeholder="username" required  onChange={(e)=>setNickname(e.target.value)}/>
           <StyledInput type="password" placeholder="password" required />
           <StyledButton type="submit">Login</StyledButton>
         </StyledForm>

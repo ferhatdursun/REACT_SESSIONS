@@ -1,20 +1,26 @@
-import React from 'react'
-import {
-  DetailContainer,
-  DetailPart,
-  HeaderContainer,
-  ImgContainer,
-  IngredContainer,
-  OtherPart,
-} from "./DetailsStyles";
+import React from "react";
+import { useLocation } from "react-router-dom";
 import dietSvg from "../../assets/diet.svg";
+import {
+  HeaderContainer,
+  DetailContainer,
+  OtherPart,
+  DetailPart,
+  IngredContainer,
+  ImgContainer,
+} from "../details/DetailsStyles";
 const Details = () => {
-  return (
+  const location = useLocation();
+  //! RecipeCard da ki state: recipe1 verilerini burada useLocation ile karsiliyoruz.
+  //! useLocation = useNavigate in kardesidir. navigate in state ine yüklenen veriyi navigate in yönlendirdigi sayfada karsilar.
 
-   // alltakiler i yorumdan çıkardığınızda, recipe api sinin buraya yönlenmiş olması gerekir, örneğin useNavigate ile
+  const recipe = location.state.recipe1;
+  //! bastigin locationdan /beim RecipeCard.jsx/ verileri al gel
+
+  return (
     <DetailContainer>
-      {/* <HeaderContainer>
-        <h1> {recipe.label}</h1>
+      <HeaderContainer>
+        <h1>{recipe.label}</h1>
         <img src={dietSvg} alt="" />
       </HeaderContainer>
       <DetailPart>
@@ -53,17 +59,17 @@ const Details = () => {
         </ImgContainer>
 
         <IngredContainer>
-          {recipe.ingredientLines.map((malzeme, index) => (
+          {recipe.ingredientLines.mao((i, index) => (
             <div key={index}>
               <p>
-             
+                {index + 1} * {i}
               </p>
             </div>
           ))}
         </IngredContainer>
-      </DetailPart> */}
+      </DetailPart>
     </DetailContainer>
   );
-}
+};
 
-export default Details
+export default Details;

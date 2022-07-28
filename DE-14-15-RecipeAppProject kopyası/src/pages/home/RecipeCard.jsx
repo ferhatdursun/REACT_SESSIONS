@@ -1,23 +1,19 @@
 import React from "react";
+import { Button, RecipeCards, RecipeHeader, RecipeImage } from "./HomeStyles";
 import { useNavigate } from "react-router-dom";
-import { RecipeCard, Button, RecipeHeader, RecipeImage } from "./HomeStyles";
-
-//! Home dan recipe1 olarak gönderilen veriyi burada ayni isimle karsiliyoruz. Sonra gelen verileri burada yazdiriyoruz.
 const RecipeCard = ({ recipe1 }) => {
-  let naviget = useNavigate();
-  naviget("/details", { state: { recipe1 } });
-  //! state sayesinde tiklanilan resmin detaylari gösteriliyor.
-  //! burada details sayfasina geciyoruz.
-  //! recipe1 de ki verileri state göm ve al git.
+  let navigate = useNavigate();
 
-  const detayaGit = () => {};
+  const detayaGit = () => {
+    navigate("/details", { state: { recipe1 } });
+  };
 
   return (
-    <RecipeCard>
+    <RecipeCards>
       <RecipeHeader>{recipe1.label}</RecipeHeader>
       <RecipeImage src={recipe1.image} />
       <Button onClick={detayaGit}>Details</Button>
-    </RecipeCard>
+    </RecipeCards>
   );
 };
 

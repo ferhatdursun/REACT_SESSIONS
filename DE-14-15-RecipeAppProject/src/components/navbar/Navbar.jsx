@@ -1,43 +1,30 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Logo, Nav } from "./NavbarStyles";
+import { Logo, MenuLink, Nav, Menu } from "./NavbarStyles";
+import { Hamburger } from "./NavbarStyles";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
 
 const Navbar = () => {
-  return (
-    <Nav className="navbar navbar-expand-lg bg-light">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          Home
-        </Link>
+  const [acik, setAcik] = useState(false);
 
-        <div
-          className="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/About">
-                ABOUT
-              </Link>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link active"
-                aria-current="page"
-                target="_blank"
-                href="https://github.com/ferhatdursun"
-              >
-                GITHUB
-              </a>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/logout">
-                LOGOUT
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+  return (
+    <Nav>
+      <Logo to="/home">
+        <i>{"<Ferhat-Clarusway>"}</i>
+        <span>recipe</span>
+      </Logo>
+
+      <Hamburger onClick={() => setAcik(!acik)}>
+        <GiHamburgerMenu />
+      </Hamburger>
+
+      <Menu>
+        <MenuLink to="/about">About</MenuLink>
+        <a href="https://www.github.com/ferhatdursun" target="_blank">
+          Github
+        </a>
+        <MenuLink to="/">Logout</MenuLink>
+      </Menu>
     </Nav>
   );
 };

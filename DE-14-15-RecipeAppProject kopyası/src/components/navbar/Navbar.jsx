@@ -1,43 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Logo, Nav } from "./NavbarStyles";
-
+import { Logo, MenuLink, Nav,Menu } from "./NavbarStyles";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { Hamburger } from "./NavbarStyles";
 const Navbar = () => {
+  const [acik, setAcik] = useState(false);
   return (
-    <Nav className="navbar navbar-expand-lg bg-light">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          Home
-        </Link>
+    <Nav>
+      <Logo to="/home">
+        <i>{"<Clarusway>"}</i>
+        <span>recipe</span>
+      </Logo>
 
-        <div
-          className="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/About">
-                ABOUT
-              </Link>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link active"
-                aria-current="page"
-                target="_blank"
-                href="https://github.com/ferhatdursun"
-              >
-                GITHUB
-              </a>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/logout">
-                LOGOUT
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <Hamburger onClick={() => setAcik(!acik)}>
+        <GiHamburgerMenu />
+      </Hamburger>
+
+      <Menu onClick={() => setAcik(!acik)} osman={acik}>
+        <MenuLink to="/about">About</MenuLink>
+        <a href="https://www.github.com/ferhatdursun" target="_blank">
+          Github
+        </a>
+        <MenuLink to="/">Logout</MenuLink>
+      </Menu>
     </Nav>
   );
 };

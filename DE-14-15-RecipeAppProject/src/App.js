@@ -1,16 +1,10 @@
 import React from "react";
-import Home from "./pages/home/Home";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Navbar from "./components/navbar/Navbar";
-import About from "./pages/about/About";
-import Login from "./pages/login/Login";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-
+import AppRouter from "../src/Router/AppRouter";
 const App = () => {
   return (
-    <div>
-      <Home/>
+    <div className="App">
+      <AppRouter />
     </div>
   );
 };
