@@ -5,7 +5,6 @@ const Baslik = () => {
   return (
     <div>
     <h1>İNSANLAR</h1>
-    
     </div>
   )
 }

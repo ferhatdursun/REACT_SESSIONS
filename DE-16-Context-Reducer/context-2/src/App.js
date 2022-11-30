@@ -1,8 +1,7 @@
 import React, { useState, useEffect, createContext } from "react";
 import GosterUsers from "./pages/GosterUsers";
 
-export const KullaniciContext=createContext()
-
+export const KullaniciContext = createContext()
 
 
 const App = () => {
@@ -13,20 +12,19 @@ const App = () => {
       .then((res) => res.json())
       .then((data) => setKullanici(data));
   }, []);
+
   const degistirWidth = (id, newWidth) => {
     setKullanici(() =>
-      kullanici.map((i) => (i.id === id ? { ...i, width: newWidth } : i))
-    );
-  };
-
-  //! verileri console da table içinde görmek için console.table(kullanici)
+      kullanici.map((i) => (i.id === id ? {...i, width: newWidth } : i)))
   
+  }
+
+  // console.table(kullanici); Verileri console de tablo halinde görmek icin kullaniliyor.
 
   return (
-    <KullaniciContext.Provider value={{kullanici, degistirWidth}} >
 
+    <KullaniciContext.Provider value={{kullanici, degistirWidth}}>
       <GosterUsers />
-
     </KullaniciContext.Provider>
   );
 };

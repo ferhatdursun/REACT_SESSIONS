@@ -4,11 +4,10 @@ import {KullaniciContext} from "../App"
 const Isimler = () => {
 
 //!   diziyi buraya getir, içinden isimleri bastır
-// ve AnaUser child ına git 
+//! ve AnaUser child veya componentine git 
  const {kullanici}= useContext(KullaniciContext)
   return (
     <div>
-{kullanici.map((i)=> <h4>{i.login}</h4>)}
 
     <AnaUser kullanici={kullanici}/>
     </div>
